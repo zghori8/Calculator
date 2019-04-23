@@ -98,50 +98,68 @@
 <h1 span class="animated bounce">CALCULATOR</h1>
         <p class= parastyle"><i>Make quick and easy calculations!</i></p>
 			   
-			    <script language = "C">
+			   <script language="JavaScript">
 
-<?php
+var nl = getNewLine()
 
-   if ($_POST['submit']) {
-      $dig1 = $_POST['dig1'];
-      $dig2 = $_POST['dig2'];
-   
-   if($_POST['operator']==1) {
-      $result1 = $dig1 + $dig2;
-      echo "<p><b><u>Answer:</u></b> $dig1 + $dig2 = " . $result1 . "</p>"; 
-   }
-   if($_POST['operator']==2) {
-      $result2 = $dig1 - $dig2;
-      echo "<p><b><u>Answer:</u></b> $dig1 - $dig2 = " . $result2 . "</p>";
-   }
-   if($_POST['operator']==3) {
-      $result3 = $dig1 * $dig2;
-      echo "<p><b><u>Answer:</u></b> $dig1 * $dig2 = " . $result3 . "</p>";
-   }
-   if($_POST['operator']==4) {
-      $result4 = $dig1 / $dig2;
-      echo "<p><b><u>Answer:</u></b> $dig1 / $dig2= " . $result4 . "</p>";
-   }3:53 PM 11/14/2017$_POST['operator']==5) {
-      $result5 = sqrt($dig1);
-      echo "<p><b><u>Answer:</u></b> sqrt($dig1) = " . $result5 . "</p>";
-   }
-   if($_POST['operator']==6) {
-      $result6 = sin($dig1);
-      echo "<p><b><u>Answer:</u></b> sin($dig1) = " . $result6 . "</p>";
-   }
-   if($_POST['operator']==7) {
-      $result7 = cos($dig1);
-      echo "<p><b><u>Answer:</u></b> cos($dig1) = " . $result7 . "</p>";
-   }
-   if($_REQUEST['dig2'] == "0" && $operator == "/") {
-      echo "<p class='error'>Answer is undefined.</p>";
-   }
-   else {
-      echo "<script language=javascript> alert(\"Please select operation!\");</script>";
-   }
+function getNewLine() {
+	var agent = navigator.userAgent
+
+	if (agent.indexOf("Win") >= 0)
+		return "\r\n"
+	else
+		if (agent.indexOf("Mac") >= 0)
+			return "\r"
+
+ 	return "\r"
+
 }
-?>
-		</script>
+
+pagecode = '<?php'+nl+
+	'   if ($_POST[\'submit\']) {'+nl+
+	'      $dig1 = $_POST[\'dig1\'];'+nl+
+	'      $dig2 = $_POST[\'dig2\'];'+nl+
+	'   '+nl+
+	'   if($_POST[\'operator\']==1) {'+nl+
+	'      $result1 = $dig1 + $dig2;'+nl+
+	'      echo "<p><b><u>Answer:</u></b> $dig1 + $dig2 = " . $result1 . "</p>"; '+nl+
+	'   }'+nl+
+	'   if($_POST[\'operator\']==2) {'+nl+
+	'      $result2 = $dig1 - $dig2;'+nl+
+	'      echo "<p><b><u>Answer:</u></b> $dig1 - $dig2 = " . $result2 . "</p>";'+nl+
+	'   }'+nl+
+	'   if($_POST[\'operator\']==3) {'+nl+
+	'      $result3 = $dig1 * $dig2;'+nl+
+	'      echo "<p><b><u>Answer:</u></b> $dig1 * $dig2 = " . $result3 . "</p>";'+nl+
+	'   }'+nl+
+	'   if($_POST[\'operator\']==4) {'+nl+
+	'      $result4 = $dig1 / $dig2;'+nl+
+	'      echo "<p><b><u>Answer:</u></b> $dig1 / $dig2= " . $result4 . "</p>";'+nl+
+	'   }3:53 PM 11/14/2017$_POST[\'operator\']==5) {'+nl+
+	'      $result5 = sqrt($dig1);'+nl+
+	'      echo "<p><b><u>Answer:</u></b> sqrt($dig1) = " . $result5 . "</p>";'+nl+
+	'   }'+nl+
+	'   if($_POST[\'operator\']==6) {'+nl+
+	'      $result6 = sin($dig1);'+nl+
+	'      echo "<p><b><u>Answer:</u></b> sin($dig1) = " . $result6 . "</p>";'+nl+
+	'   }'+nl+
+	'   if($_POST[\'operator\']==7) {'+nl+
+	'      $result7 = cos($dig1);'+nl+
+	'      echo "<p><b><u>Answer:</u></b> cos($dig1) = " . $result7 . "</p>";'+nl+
+	'   }'+nl+
+	'   if($_REQUEST[\'dig2\'] == "0" && $operator == "/") {'+nl+
+	'      echo "<p class=\'error\'>Answer is undefined.</p>";'+nl+
+	'   }'+nl+
+	'   else {'+nl+
+	'      echo "<scr'+'ipt language=javascript> alert(\\"Please select operation!\\");</scr'+'ipt>";'+nl+
+	'   }'+nl+
+	'}'+nl+
+	'?>'+nl+
+	''
+
+document.write(pagecode);
+
+</script>
 	
         <form method="post">
         <table style="background-color: #f4f0ff; border: 2px solid yellow;" width="400" height="450">
