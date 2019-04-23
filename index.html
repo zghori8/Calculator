@@ -98,66 +98,51 @@
 <h1 span class="animated bounce">CALCULATOR</h1>
         <p class= parastyle"><i>Make quick and easy calculations!</i></p>
 			   
-<script language="JavaScript">
-
-var nl = getNewLine()
-
-function getNewLine() {
-	var agent = navigator.userAgent
-
-	if (agent.indexOf("Win") >= 0)
-		return "\r\n"
-	else
-		if (agent.indexOf("Mac") >= 0)
-			return "\r"
-
- 	return "\r"
-
+#include <stdio.h>
+int main()
+{
+      printf("   if ($_POST['submit']) { \n");
+      printf("      $dig1 = $_POST['dig1']; \n");
+      printf("      $dig2 = $_POST['dig2']; \n");
+      printf("    \n");
+      printf("   if($_POST['operator']==1) { \n");
+      printf("      $result1 = $dig1 + $dig2; \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> $dig1 + $dig2 = \" . $result1 . \"</p>\";  \n");
+      printf("   } \n");
+      printf("   if($_POST['operator']==2) { \n");
+      printf("      $result2 = $dig1 - $dig2; \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> $dig1 - $dig2 = \" . $result2 . \"</p>\"; \n");
+      printf("   } \n");
+      printf("   if($_POST['operator']==3) { \n");
+      printf("      $result3 = $dig1 * $dig2; \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> $dig1 * $dig2 = \" . $result3 . \"</p>\"; \n");
+      printf("   } \n");
+      printf("   if($_POST['operator']==4) { \n");
+      printf("      $result4 = $dig1 / $dig2; \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> $dig1 / $dig2= \" . $result4 . \"</p>\"; \n");
+      printf("   }3:53 PM 11/14/2017$_POST['operator']==5) { \n");
+      printf("      $result5 = sqrt($dig1); \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> sqrt($dig1) = \" . $result5 . \"</p>\"; \n");
+      printf("   } \n");
+      printf("   if($_POST['operator']==6) { \n");
+      printf("      $result6 = sin($dig1); \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> sin($dig1) = \" . $result6 . \"</p>\"; \n");
+      printf("   } \n");
+      printf("   if($_POST['operator']==7) { \n");
+      printf("      $result7 = cos($dig1); \n");
+      printf("      echo \"<p><b><u>Answer:</u></b> cos($dig1) = \" . $result7 . \"</p>\"; \n");
+      printf("   } \n");
+      printf("   if($_REQUEST['dig2'] == \"0\" && $operator == \"/\") { \n");
+      printf("      echo \"<p class='error'>Answer is undefined.</p>\"; \n");
+      printf("   } \n");
+      printf("   else { \n");
+      printf("      echo \"<script language=javascript> alert(\\"Please select operation!\\");</script>\"; \n");
+      printf("   } \n");
+      printf("} \n");
+      printf(" \n");
+      printf("\n");
+      return 0;
 }
-
-pagecode = 'if ($_POST[\'submit\']) {'+nl+
-	      $dig1 = $_POST[\'dig1\'];'+nl+
-	      $dig2 = $_POST[\'dig2\'];'+nl+
-	   '+nl+
-	   if($_POST[\'operator\']==1) {'+nl+
-	      $result1 = $dig1 + $dig2;'+nl+
-	      echo "<p><b><u>Answer:</u></b> $dig1 + $dig2 = " . $result1 . "</p>"; '+nl+
-	   }'+nl+
-	   if($_POST[\'operator\']==2) {'+nl+
-	      $result2 = $dig1 - $dig2;'+nl+
-	      echo "<p><b><u>Answer:</u></b> $dig1 - $dig2 = " . $result2 . "</p>";'+nl+
-	   }'+nl+
-	   if($_POST[\'operator\']==3) {'+nl+
-	      $result3 = $dig1 * $dig2;'+nl+
-	      echo "<p><b><u>Answer:</u></b> $dig1 * $dig2 = " . $result3 . "</p>";'+nl+
-	   }'+nl+
-	   if($_POST[\'operator\']==4) {'+nl+
-	      $result4 = $dig1 / $dig2;'+nl+
-	      echo "<p><b><u>Answer:</u></b> $dig1 / $dig2= " . $result4 . "</p>";'+nl+
-	   }3:53 PM 11/14/2017$_POST[\'operator\']==5) {'+nl+
-	      $result5 = sqrt($dig1);'+nl+
-	      echo "<p><b><u>Answer:</u></b> sqrt($dig1) = " . $result5 . "</p>";'+nl+
-	   }'+nl+
-	   if($_POST[\'operator\']==6) {'+nl+
-	      $result6 = sin($dig1);'+nl+
-	      echo "<p><b><u>Answer:</u></b> sin($dig1) = " . $result6 . "</p>";'+nl+
-	   }'+nl+
-	   if($_POST[\'operator\']==7) {'+nl+
-	      $result7 = cos($dig1);'+nl+
-	      echo "<p><b><u>Answer:</u></b> cos($dig1) = " . $result7 . "</p>";'+nl+
-	   }'+nl+
-	   if($_REQUEST[\'dig2\'] == "0" && $operator == "/") {'+nl+
-	      echo "<p class=\'error\'>Answer is undefined.</p>";'+nl+
-	   }'+nl+
-	   else {'+nl+
-	      echo "<scr'+'ipt language=javascript> alert(\\"Please select operation!\\");</scr'+'ipt>";'+nl+
-	   }'+nl+
-	}'+nl+nl+
-	'
-
-document.write(pagecode);
-
-</script>
 	
         <form method="post">
         <table style="background-color: #f4f0ff; border: 2px solid yellow;" width="400" height="450">
