@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Basic Calculator</title>	
+	
+	<meta name="description" content="Basic Calculator">
+	<meta name="author" content="Zainab Ghori">	
+	
+	<link rel="stylesheet" href="animate.css">
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pMnvB-u74E-yX0IzEJG5O546vIRmZDUV5ZZVHG_Xwv3f_Gb-XaYQCU1yEi-yqU7K2Gw=w300" />
+
+        <style>
+        body {
+           padding: 10px 75px 10px 75px;
+           background-image: url("http://cdn.theeverygirl.com/wp-content/uploads/2015/09/TheEverygirl_Style_ParsonsDesk-11.jpg");
+           background-size: cover;
+           font-family: Avantgarde, Century Gothic;
+           color: #000000;
+        }
+        #reportContainer {
+           position: relative;
+           margin-left: auto;
+           margin-right: auto;
+           width: 80%; 
+           padding: 2%; 
+           margin-top: 100px;
+           background: rgb(255, 245, 224, 0.5);
+           border-radius: 1.0em; 
+           border: 1px solid #23dc77;
+        }
+        h1 {
+           color: #5a5175;
+           text-shadow: 0px 3px 0px #b2a98f,
+           0px 14px 10px rgba(0,0,0,0.15),
+           0px 24px 2px rgba(0,0,0,0.1),
+           0px 34px 30px rgba(0,0,0,0.1)
+        }
+        .parastyle {
+           font-famiy: Century Gothic;
+           font-size: 20px;
+        }
+        .input {
+           border-radius: 4.3px;
+           border: 1px solid #665175;
+           font-size: 15px;
+           font-family: Century Gothic;
+        }
+        .submit {
+           font-size: 20px;
+           font-family: Courier New;
+           border: 2px solid black;
+           background-color: #ffffff;
+        }
+       .back-button {
+           border-radius: 25px;
+       }
+       .back-button:hover {
+           text-decoration: none;
+           box-shadow: 3px 3px 3px 3px #ffffff;
+           -webkit-box-shadow: 3px 3px 3px 3px #ffffff;
+           -moz-box-shadow: 3px 3px 3px 3px #ffffff;
+       }
+       .submit {
+           padding: 5px 5px;
+           font-size: 18px;
+           text-align: center;
+           cursor: pointer;
+           outline: none;
+           color: #fff;
+           background-color: #000000;
+           border: none;
+           border-radius: 10px;
+           box-shadow: 0 9px #999;
+      }
+      .submit:hover {
+           background-color: #3c718e;
+           color: #000000;
+      }
+      .submit:active {
+           background-color: #ddffaf;
+           color: #000000;
+           box-shadow: 0 5px #666;
+           transform: translateX(4px);
+      }
+      .error {
+           font-family: Courier New;
+           text-decoration: underline;
+           font-size: 20px;
+           color: red;
+      }
+        </style>
+</head>
+<body>
+<a href="http://ics.actonhighschool.ca/2017-2018/ghorib3cf8/"><img src="http://downloadicons.net/sites/default/files/returns--button-icon-72899.png" alt="Back Button" title="Back" class="back-button" style="width:85px; height:80px;" /></a>
+        <center><div id="reportContainer">
+<h1 span class="animated bounce">CALCULATOR</h1>
+        <p class= parastyle"><i>Make quick and easy calculations with this efficient calculator!</i></p>
+<?php
+
+   if ($_POST['submit']) {
+      $dig1 = $_POST['dig1'];
+      $dig2 = $_POST['dig2'];
+   
+   if($_POST['operator']==1) {
+      $result1 = $dig1 + $dig2;
+      echo "<p><b><u>Answer:</u></b> $dig1 + $dig2 = " . $result1 . "</p>"; 
+   }
+   if($_POST['operator']==2) {
+      $result2 = $dig1 - $dig2;
+      echo "<p><b><u>Answer:</u></b> $dig1 - $dig2 = " . $result2 . "</p>";
+   }
+   if($_POST['operator']==3) {
+      $result3 = $dig1 * $dig2;
+      echo "<p><b><u>Answer:</u></b> $dig1 * $dig2 = " . $result3 . "</p>";
+   }
+   if($_POST['operator']==4) {
+      $result4 = $dig1 / $dig2;
+      echo "<p><b><u>Answer:</u></b> $dig1 / $dig2= " . $result4 . "</p>";
+   }3:53 PM 11/14/2017$_POST['operator']==5) {
+      $result5 = sqrt($dig1);
+      echo "<p><b><u>Answer:</u></b> sqrt($dig1) = " . $result5 . "</p>";
+   }
+   if($_POST['operator']==6) {
+      $result6 = sin($dig1);
+      echo "<p><b><u>Answer:</u></b> sin($dig1) = " . $result6 . "</p>";
+   }
+   if($_POST['operator']==7) {
+      $result7 = cos($dig1);
+      echo "<p><b><u>Answer:</u></b> cos($dig1) = " . $result7 . "</p>";
+   }
+   if($_REQUEST['dig2'] == "0" && $operator == "/") {
+      echo "<p class='error'>Answer is undefined.</p>";
+   }
+   else {
+      echo "<script language=javascript> alert(\"Please select operation!\");</script>";
+   }
+}
+?>
+        <form method="post">
+        <table style="background-color: #f4f0ff; border: 2px solid yellow;" width="400" height="450">
+     <tr>
+        <td style="background-color:#f4f0ff; color:black; font-family: Century Gothic;"><center>Choose First Digit</td>
+        <td colspan="0">
+        <select class="input" name="dig1">
+		<option value="">1</option>
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+	        <option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+        </select>
+	</td>
+     <tr>
+        <td style="background-color:#f4f0ff; font-family: Century Gothic; align:center;"></td>
+                <td>
+		<input type="radio" name="operator" value="1">Add</input><br />
+		<input type="radio" name="operator" value="2">Subtract</input><br />
+		<input type="radio" name="operator" value="3">Multiply</input><br />
+		<input type="radio" name="operator" value="4">Divide</input><br />
+		<input type="radio" name="operator" value="5">Square root</input><br />
+		<input type="radio" name="operator" value="6">Sine</input><br />
+		<input type="radio" name="operator" value="7">Cosine</input><br />
+        </td>
+     </tr>
+     <tr>
+         <td style="background-color:#f4f0ff; color:black; font-family: Century Gothic"><center>Choose Second Digit</td>
+         <td class="auto-style5">
+         <select class="input" name="dig2"><br />
+		<option value="">2</option>
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+           	<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+	</td>
+     </tr>
+     <tr>
+        <td><input type="submit" name="submit" value="CALCULATE" class="submit";/></td>
+     </tr>
+     </table>
+     </form>
+
+</body>
+</html>
