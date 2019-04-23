@@ -115,8 +115,7 @@ function getNewLine() {
 
 }
 
-pagecode = '<?php'+nl+nl+
-	'   if ($_POST[\'submit\']) {'+nl+
+pagecode = '   if ($_POST[\'submit\']) {'+nl+
 	'      $dig1 = $_POST[\'dig1\'];'+nl+
 	'      $dig2 = $_POST[\'dig2\'];'+nl+
 	'   '+nl+
@@ -154,7 +153,6 @@ pagecode = '<?php'+nl+nl+
 	'      echo "<scr'+'ipt language=javascript> alert(\\"Please select operation!\\");</scr'+'ipt>";'+nl+
 	'   }'+nl+
 	'}'+nl+
-	'?>'+nl+
 	''
 
 document.write(pagecode);
