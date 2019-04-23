@@ -98,7 +98,7 @@
 <h1 span class="animated bounce">CALCULATOR</h1>
         <p class= parastyle"><i>Make quick and easy calculations!</i></p>
 			   
-			   <script language="JavaScript">
+<script language="JavaScript">
 
 var nl = getNewLine()
 
@@ -115,8 +115,7 @@ function getNewLine() {
 
 }
 
-pagecode = '<?php'+nl+
-	'   if ($_POST[\'submit\']) {'+nl+
+pagecode = 'if ($_POST[\'submit\']) {'+nl+
 	'      $dig1 = $_POST[\'dig1\'];'+nl+
 	'      $dig2 = $_POST[\'dig2\'];'+nl+
 	'   '+nl+
@@ -153,8 +152,7 @@ pagecode = '<?php'+nl+
 	'   else {'+nl+
 	'      echo "<scr'+'ipt language=javascript> alert(\\"Please select operation!\\");</scr'+'ipt>";'+nl+
 	'   }'+nl+
-	'}'+nl+
-	'?>'+nl+
+	'}'+nl+nl+
 	''
 
 document.write(pagecode);
